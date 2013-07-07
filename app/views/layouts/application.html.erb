@@ -1,17 +1,23 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title><%= full_title(yield(:title))  %></title>
-<!--   This stylesheet line includes the file application.css -->  
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-
-<!-- This is the code that makes this file dynamic with other views. 
-It inserts e.g. the 'home' page in for yield below.-->
-<%= yield %>
-
-</body>
+	<head>
+	  <title><%= full_title(yield(:title))  %></title>
+		<!--   This stylesheet line includes the file application.css -->  
+	  <%= stylesheet_link_tag    "application", media: "all" %>
+	  <%= javascript_include_tag "application" %>
+	  <%= csrf_meta_tags %>
+	  <%= render 'layouts/shim' %>
+	</head>
+	 
+	<body>
+	  <%= render 'layouts/header' %>
+		<!-- Makes file dynamic with other views. 
+		It inserts e.g. the 'home' page in for yield below.-->
+		<div class="container">
+			<%= yield %>
+	  <%= render 'layouts/footer' %>
+		</div>
+	</body>
 </html>
+
+
