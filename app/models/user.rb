@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
 
-#makes columns in DB accesible  
+#makes columns in DB accesible externally
   attr_accessible :email, :name, :password, :password_confirmation
 
 # Does a lot of crazy stuff: To add password and password_confirmation 
